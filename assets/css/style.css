@@ -357,35 +357,50 @@ a:hover {
 /*------/ Prelaoder /------*/
 #preloader {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 9999;
-  overflow: hidden;
-  background: #fff;
+  background: #0b0f19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #f2f2f2;
-  border-top: 6px solid #0078ff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1s linear infinite;
+.loader-name {
+  display: flex;
+  gap: 10px;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  font-family: "Poppins", sans-serif;
 }
 
-@keyframes animate-preloader {
+.loader-name span {
+  color: #ffffff20;
+  animation: nameGlow 1.5s infinite;
+}
+
+.loader-name span:nth-child(1) { animation-delay: 0s; }
+.loader-name span:nth-child(2) { animation-delay: .1s; }
+.loader-name span:nth-child(3) { animation-delay: .2s; }
+.loader-name span:nth-child(4) { animation-delay: .3s; }
+.loader-name span:nth-child(5) { animation-delay: .4s; }
+.loader-name span:nth-child(6) { animation-delay: .5s; }
+
+@keyframes nameGlow {
   0% {
-    transform: rotate(0deg);
+    color: #ffffff20;
+    text-shadow: none;
+    transform: translateY(0);
   }
-
+  50% {
+    color: #6a11cb;
+    text-shadow: 0 0 15px #6a11cb, 0 0 30px #2575fc;
+    transform: translateY(-6px);
+  }
   100% {
-    transform: rotate(360deg);
+    color: #ffffff20;
+    text-shadow: none;
+    transform: translateY(0);
   }
 }
 

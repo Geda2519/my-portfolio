@@ -365,17 +365,33 @@ a:hover {
   justify-content: center;
 }
 
+.preloader-content {
+  text-align: center;
+}
+
+/* IMAGE AS LOGO */
+.preloader-logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  animation: logoFloat 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(106,17,203,0.5));
+}
+
+/* NAME */
 .loader-name {
   display: flex;
+  justify-content: center;
   gap: 10px;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 800;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   font-family: "Poppins", sans-serif;
 }
 
 .loader-name span {
-  color: #ffffff20;
+  color: #ffffff25;
   animation: nameGlow 1.5s infinite;
 }
 
@@ -386,9 +402,10 @@ a:hover {
 .loader-name span:nth-child(5) { animation-delay: .4s; }
 .loader-name span:nth-child(6) { animation-delay: .5s; }
 
+/* ANIMATIONS */
 @keyframes nameGlow {
   0% {
-    color: #ffffff20;
+    color: #ffffff25;
     text-shadow: none;
     transform: translateY(0);
   }
@@ -398,9 +415,18 @@ a:hover {
     transform: translateY(-6px);
   }
   100% {
-    color: #ffffff20;
+    color: #ffffff25;
     text-shadow: none;
     transform: translateY(0);
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
